@@ -1,90 +1,103 @@
-.filter{
-    width: 95%;
-    border-radius: 5px;
-    margin-top: 15px;
-    background-color:#fff;
-    padding: 10px;
-    align-items: center;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-    margin: auto;
+.filter {
+  width: 95%;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: #fff;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  margin: auto;
 }
-.Active h1{
 
-    font-size: 24px;
-    color: rgb(99, 99, 99);
-    font-weight: 500;
-    line-height: 28.7952px;
-    margin: 15px auto ;
-    width: 95%;
-    
+.Active h1 {
+  font-size: 24px;
+  color: rgb(99, 99, 99);
+  font-weight: 500;
+  line-height: 28.7952px;
+  margin: 15px auto;
+  width: 95%;
+}
 
+.ViewDataTable,
+.AdmainPaginationAndRow {
+  width: 95%;
+  margin: 0 auto;
 }
-.ViewDataTable,.AdmainPaginationAndRow{
-    width: 95%;
-    margin: 0 auto ;
-}
+
 .getRowOfActive th p {
-    font-size: 15px;
-    font-weight: 700;
-    color:  rgb(110, 107, 123);
-}
-.GetActiveDate  p {
-    font-size: 13px;
-    font-weight: 400;
-    color:  rgb(110, 107, 123);
-
-}
-.GetActiveDate ,.AdmainPaginationAndRow {
-    margin-top: 15px;
-    background-color:#fff;
-    padding: 10px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(110, 107, 123);
 }
 
-.GetActiveDate  td {
-    border-bottom: 1px solid #ddd;
-    padding: 8px;
-  }
-  .GetActiveDate tbody {
-    width: 100%;
-  }
-  .filter h2{
-    font-size: 18px;
-    font-weight: 500;
-    color: rgb(110, 107, 123);
-    line-height: 27px;
-  }
-  .filter button{
-    border-radius: 5px;
-    padding: 7px 25px;
-    border: none;
-    color: #fff;
-    font-weight: 600;
-    bottom: 0;
-    
-  }
-  .filter button:hover{
-    box-shadow: 0 0 7px rgb(115, 103, 240);
+.GetActiveDate p {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(110, 107, 123);
 
-  }
-  #selectRowAdmin ,.rowAdmin p {
-    background-color: #fff;
-    border: none;
-    color: rgba(0, 0, 0, 0.54);
-    font-size: 13px;
-  }
-  .page-link{
-    color: rgba(0, 0, 0, 0.54);
-    font-size: 13px;
-  }
-  .universityImage{
-    width: 35px;
-    height: 35px;
-  }
-.Active{
+}
+
+.GetActiveDate,
+.AdmainPaginationAndRow {
+  margin-top: 15px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.GetActiveDate td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+.GetActiveDate tbody {
+  width: 100%;
+}
+
+.filter h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(110, 107, 123);
+  line-height: 27px;
+}
+
+.filter button {
+  border-radius: 5px;
+  padding: 7px 25px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  bottom: 0;
+
+}
+
+.filter button:hover {
+  box-shadow: 0 0 7px rgb(115, 103, 240);
+}
+
+#selectRowAdmin,
+.rowAdmin p {
+  background-color: #fff;
+  border: none;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 13px;
+}
+
+.page-link {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 13px;
+}
+
+.universityImage {
+  width: 35px;
+  height: 35px;
+}
+
+.Active {
   min-height: 100vh;
 }
-.Action{
+
+.Action {
   width: 20px;
   height: 30px;
 }

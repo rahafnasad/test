@@ -1,8 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createContext } from "react";
 
 export let UserContext = createContext();
+
 export default function UserContextProvider({ children }) {
   const [isPage1Active, setIsPAge1Active] = useState(true);
   const [userInpage1, setUserInPagre1] = useState([]);

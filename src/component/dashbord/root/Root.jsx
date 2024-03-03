@@ -1,21 +1,21 @@
-import { Outlet } from "react-router-dom";
-import root from './Root.module.css'
+import { useState, useEffect } from "react";
+import { Outlet, NavLink } from "react-router-dom";
 import Sidebar from "../sidebar/Sidebar";
 import Navbar from "../navbar/Navbar";
-import { useState, useEffect } from "react";
+import root from './Root.module.css'
 
 import { MdOutlineMail } from "react-icons/md";
 import { TbReportSearch } from "react-icons/tb";
-
 import { FaRegUser } from "react-icons/fa6";
 import { FiUserX } from "react-icons/fi";
-
 import style from '../sidebar/Sidebar.module.css'
-import { NavLink } from 'react-router-dom';
+
+
 
 const Root = () => {
-  const [IsActiveActive,setIsActiveActive]=useState(true);
- 
+  const [IsActiveActive, setIsActiveActive] = useState(true);
+  const [showSideBar, setShowSideBar] = useState(true);
+
   const sidebarItems = [
     {
       id: "university",
@@ -25,9 +25,9 @@ const Root = () => {
       id: "active",
       content: (
         <NavLink to='' className={({ isActive }) => IsActiveActive ? style.activelink : style.unactivelink}
-        onClick={()=>{setIsActiveActive(true)}}
+          onClick={() => { setIsActiveActive(true) }}
         >
-          <FaRegUser  className={style.linkslogos}/>
+          <FaRegUser className={style.linkslogos} />
           <span className={style.sidebarlinksname}> النشطة</span>
         </NavLink>
       )
@@ -36,9 +36,9 @@ const Root = () => {
       id: "suspended",
       content: (
         <NavLink to='saspended' className={({ isActive }) => isActive ? style.activelink : style.unactivelink}
-        onClick={()=>{setIsActiveActive(false)}}
+          onClick={() => { setIsActiveActive(false) }}
         >
-          <FiUserX  className={style.linkslogos} />
+          <FiUserX className={style.linkslogos} />
           <span className={style.sidebarlinksname}> المعلقة</span>
         </NavLink>
       )
@@ -52,9 +52,9 @@ const Root = () => {
       id: "EmailAdmin",
       content: (
         <NavLink to='email' className={({ isActive }) => isActive ? style.activelink : style.unactivelink}
-        onClick={()=>{setIsActiveActive(false)}}
+          onClick={() => { setIsActiveActive(false) }}
         >
-          <MdOutlineMail  className={style.linkslogos} />
+          <MdOutlineMail className={style.linkslogos} />
           <span className={style.sidebarlinksname}> ايميل </span>
         </NavLink>
       )
@@ -67,16 +67,15 @@ const Root = () => {
       id: "viewReport",
       content: (
         <NavLink to='viewReports' className={({ isActive }) => isActive ? style.activelink : style.unactivelink}
-        onClick={()=>{setIsActiveActive(false)}}
+          onClick={() => { setIsActiveActive(false) }}
         >
-          <TbReportSearch  className={style.linkslogos} />
+          <TbReportSearch className={style.linkslogos} />
           <span className={style.sidebarlinksname}> عرض التقارير</span>
         </NavLink>
       )
     },
-    
+
   ];
-  const [showSideBar, setShowSideBar] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -92,18 +91,22 @@ const Root = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const closeSidebar = () => {
     setShowSideBar(!showSideBar);
   };
+
   return (
     <>
       <div className={root.thecontainer}>
         <div className={showSideBar ? root.background : ""} onClick={closeSidebar}></div>
-        {<div className={showSideBar ? root.sidebarcontainershow : root.sidebarcontainerhide}><Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} sidebarItems={sidebarItems} /></div>}
-        <div className={root.navbarcontainer}> <Navbar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
-          
-          
-          
+        {
+          <div className={showSideBar ? root.sidebarcontainershow : root.sidebarcontainerhide}>
+            <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} sidebarItems={sidebarItems} />
+          </div>
+        }
+        <div className={root.navbarcontainer}>
+          <Navbar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
           <Outlet />
         </div>
       </div>

@@ -5,8 +5,8 @@ export default function Active() {
     { type: "الايميل", name: "email" },
     { type: "رقم الهاتف", name: "phone" },
   ];
+
   return (
-<>
-<ViewData data={data} path="/api/v1/dashboard/users?" state="active"/>
-</>  )
+    <ViewData data={data} path="/api/v1/dashboard/users?" state="active" />
+  )
 }

@@ -4,7 +4,7 @@
     height: 65px;
     border-radius: 5px;
     margin-top: 15px;
-    background-color:#fff;
+    background-color: #fff;
     padding: 10px;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,7 @@
 
 .sidebartrigger {
     border: none;
-    background-color:#fff;
+    background-color: #fff;
     display: flex;
     align-items: center;
 }

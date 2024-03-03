@@ -15,23 +15,21 @@ export default function ViewData({ data, path, state }) {
   const [isLoding, setLoding] = useState(false);
   const [NumberOfPage, setNumberOfPage] = useState(0);
   const [currentPage, setCuurentPage] = useState(1);
-  const {ShowAdd}=useContext(UserContext);
-  const {setShowAdd}=useContext(UserContext);
+  const { ShowAdd } = useContext(UserContext);
+  const { setShowAdd } = useContext(UserContext);
 
   const getUser = async (page) => {
     var inputName = document.getElementById("ActiveName").value;
     var inputEmail = document.getElementById("ActiveEmail").value;
     var inputCountry = document.getElementById("countryFilter").value;
-    var inputRow =( document.getElementById("selectRowAdmin")!==null)? document.getElementById("selectRowAdmin").value:10;
+    var inputRow = (document.getElementById("selectRowAdmin") !== null) ? document.getElementById("selectRowAdmin").value : 10;
     setCuurentPage(page);
     try {
       const { data } = await axios({
         method: "GET",
-        url: `${
-          import.meta.env.VITE_API_URL
-        }${path}&email=${inputEmail}&length=${inputRow}&page=${page}&name=${inputName}${
-          inputCountry ? `&countryid=${inputCountry}` : ""
-        }`,
+        url: `${import.meta.env.VITE_API_URL
+          }${path}&email=${inputEmail}&length=${inputRow}&page=${page}&name=${inputName}${inputCountry ? `&countryid=${inputCountry}` : ""
+          }`,
 
         withCredentials: true,
       });
@@ -63,11 +61,11 @@ export default function ViewData({ data, path, state }) {
   return (
     <>
       <div className="Active w-100 mb-5">
-        {ShowAdd?
-       <>
-       <CreateUserAdmin/>
-       </>
-        :""}
+        {ShowAdd ?
+          <>
+            <CreateUserAdmin />
+          </>
+          : ""}
         {state != "report" ? <h1>الجامعات</h1> : <h1>التقارير</h1>}
         <div className="filter ">
           <h2 className="me-4">تصنيف</h2>
@@ -132,14 +130,14 @@ export default function ViewData({ data, path, state }) {
             {state != "report" ? (
               <div className="col-lg-3">
                 <button
-  className="bg-mainColor mt-5 me-1"
-  onClick={() => {
-    setShowAdd(true);
+                  className="bg-mainColor mt-5 me-1"
+                  onClick={() => {
+                    setShowAdd(true);
 
-  }}
->
-  اضافة
-</button>
+                  }}
+                >
+                  اضافة
+                </button>
 
               </div>
             ) : (
@@ -150,7 +148,7 @@ export default function ViewData({ data, path, state }) {
         <table className=" mt-4 ViewDataTable">
           <thead className="getRowOfActive ">
             <tr>
-            <th>
+              <th>
                 <p>الاسم</p>
               </th>
               {data.map((data, index) => (
@@ -168,14 +166,14 @@ export default function ViewData({ data, path, state }) {
           </thead>
 
           <tbody className="GetActiveDate mb-0">
-          
+
             {users.length ? (
               users.map((user, index) => (
                 <tr key={index}>
                   <td>
                     <div className="d-flex">
-                      <img src={user.image} alt="logo" className="universityImage"/>
-                    <p className="me-2">{user.name_ar}</p>
+                      <img src={user.image} alt="logo" className="universityImage" />
+                      <p className="me-2">{user.name_ar}</p>
 
                     </div>
                   </td>
@@ -188,7 +186,7 @@ export default function ViewData({ data, path, state }) {
                     <p className="me-2">{user.City.Country.name_ar}</p>
                   </td>
                   <td>
-                  <AiTwotoneInteraction className="Action" />
+                    <AiTwotoneInteraction className="Action" />
 
                   </td>
                 </tr>
@@ -198,75 +196,77 @@ export default function ViewData({ data, path, state }) {
             )}
           </tbody>
         </table>
-        {users.length?<div className="AdmainPaginationAndRow mt-0 ">
-          <div className="d-flex justify-content-center ">
-            <div className="rowAdmin">
-              <div className="d-flex">
-                <p className="mt-3 mx-2">Rows Per Page</p>
-                <select
-                  name="selectRow"
-                  id="selectRowAdmin"
-                  onChange={() => {
-                    getUser(currentPage);
-                  }}
-                >
-                  <option value="5">5</option>
+        {
+          users.length ? <div className="AdmainPaginationAndRow mt-0 ">
+            <div className="d-flex justify-content-center ">
+              <div className="rowAdmin">
+                <div className="d-flex">
+                  <p className="mt-3 mx-2">Rows Per Page</p>
+                  <select
+                    name="selectRow"
+                    id="selectRowAdmin"
+                    onChange={() => {
+                      getUser(currentPage);
+                    }}
+                  >
+                    <option value="5">5</option>
 
-                  <option value="10">10</option>
-                  <option value="15">15</option>
-                  <option value="20">20</option>
-                  <option value="25">25</option>
-                  <option value="30">30</option>
-                </select>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div className="paginationAdmin ">
-              <nav aria-label="Page navigation example">
-                <ul className="pagination mt-2 ms-3">
-                  <li className="page-item">
-                    <a
-                      className="page-link"
-                      href="#"
-                      onClick={() => {
-                        currentPage > 1 ? getUser(currentPage - 1) : "";
-                      }}
-                    >
-                      Previous
-                    </a>
-                  </li>
-                  {Array.from({ length: NumberOfPage }).map((_, index) => (
-                    <li
-                      key={index}
-                      className="page-item "
-                      onClick={() => {
-                        getUser(index + 1);
-                      }}
-                      value={index + 1}
-                    >
-                      <a className="page-link" href="#">
-                        {index + 1}
+              <div className="paginationAdmin ">
+                <nav aria-label="Page navigation example">
+                  <ul className="pagination mt-2 ms-3">
+                    <li className="page-item">
+                      <a
+                        className="page-link"
+                        href="#"
+                        onClick={() => {
+                          currentPage > 1 ? getUser(currentPage - 1) : "";
+                        }}
+                      >
+                        Previous
                       </a>
                     </li>
-                  ))}
+                    {Array.from({ length: NumberOfPage }).map((_, index) => (
+                      <li
+                        key={index}
+                        className="page-item "
+                        onClick={() => {
+                          getUser(index + 1);
+                        }}
+                        value={index + 1}
+                      >
+                        <a className="page-link" href="#">
+                          {index + 1}
+                        </a>
+                      </li>
+                    ))}
 
-                  <li className="page-item">
-                    <a
-                      className="page-link"
-                      href="#"
-                      onClick={() => {
-                        currentPage < NumberOfPage
-                          ? getUser(currentPage + 1)
-                          : "";
-                      }}
-                    >
-                      Next
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+                    <li className="page-item">
+                      <a
+                        className="page-link"
+                        href="#"
+                        onClick={() => {
+                          currentPage < NumberOfPage
+                            ? getUser(currentPage + 1)
+                            : "";
+                        }}
+                      >
+                        Next
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
-          </div>
-        </div>:""}
+          </div> : ""
+        }
       </div>
     </>
   );

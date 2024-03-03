@@ -1,19 +1,16 @@
 import React, { useContext, useState } from 'react';
-import './createuser.css';
-import InputWihoutValidation from '../input/InputWihoutValidation';
 import { useNavigate } from 'react-router-dom';
 import { logInSchema } from '../Validation/logInSchema';
-import Input from '../input/Input';
-import '../input/input.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import Input from '../input/Input';
 import { UserContext } from '../context/userContext';
+import '../input/input.css';
+import './createuser.css';
 
 export default function CreatePage2() {
   const { setIsPAge1Active } = useContext(UserContext);
-  const { setUserInPagre1 } = useContext(UserContext);
 
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
   const initialValues = {
     uni_name_ar: '',
     uni_name_eng: '',
@@ -114,11 +111,8 @@ export default function CreatePage2() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const validationErrors = logInSchema.validateSync(values, { abortEarly: false, context: { skipField: true } });
-
     setErrors(validationErrors.errors || {});
-
     if (Object.keys(validationErrors.errors).length === 0) {
       onSubmit(values);
     } else {

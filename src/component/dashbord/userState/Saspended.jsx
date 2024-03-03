@@ -6,9 +6,8 @@ export default function Saspended() {
     { type: "الايميل", name: "email" },
     { type: "رقم الهاتف", name: "phone" },
   ];
+  
   return (
-<>
-<ViewData data={data} path="/api/v1/dashboard/users?active=false" state="saspended"/>
-
-</>  )
+    <ViewData data={data} path="/api/v1/dashboard/users?active=false" state="saspended" />
+  )
 }

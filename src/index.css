@@ -1,16 +1,15 @@
-:root{
-
-    --mainColor:rgb(115, 103, 240);
-}
-.bg-mainColor{
-background-color: var(--mainColor);
-
-}
-.text-mainColor{
-    color: var(--mainColor);
+:root {
+  --mainColor: rgb(115, 103, 240);
 }
 
+.bg-mainColor {
+  background-color: var(--mainColor);
+}
 
-body{
-    background-color: rgb(248, 248, 248);
+.text-mainColor {
+  color: var(--mainColor);
+}
+
+body {
+  background-color: rgb(248, 248, 248);
 }

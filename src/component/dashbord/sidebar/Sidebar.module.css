@@ -1,4 +1,3 @@
-
 .sidebar {
     width: 260px;
     height: 100%;
@@ -8,7 +7,7 @@
     box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.2);
     direction: rtl;
     min-height: 100vh;
-    
+
 }
 
 .sidebarheader {
@@ -71,7 +70,8 @@
 .sidebarlinksname {
     margin-right: 5px;
 }
-.linkslogos{
+
+.linkslogos {
     margin-bottom: 6px;
 }
 
@@ -109,6 +109,7 @@ h2 {
     font-size: 23.2px;
     margin-top: 5px;
 }
+
 @media only screen and (min-width: 1200px) {
     .closesidebar {
         display: none;

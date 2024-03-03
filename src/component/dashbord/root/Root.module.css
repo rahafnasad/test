@@ -1,4 +1,3 @@
-
 .thecontainer {
     display: flex;
     width: 100vw;
@@ -6,7 +5,7 @@
     height: 100%;
     direction: rtl;
     min-height: 100vh;
-   
+
 }
 
 .navbarcontainer {
@@ -58,12 +57,15 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    .sidebarcontainershow,.sidebarcontainerhide {
+
+    .sidebarcontainershow,
+    .sidebarcontainerhide {
         position: fixed;
         z-index: 999;
         top: 0;
         bottom: 0;
     }
+
     .background {
         position: fixed;
         top: 0;
