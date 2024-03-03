@@ -1,8 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import "./login.css";
+import { useTranslation } from "react-i18next";
 
 export default function Login() {
+  const { t } = useTranslation();
+
   return (
     <div className="loginHome">
       <div className="ovelay">
@@ -16,7 +19,7 @@ export default function Login() {
               <Outlet />
             </div>
             <div className="loginDescription ms-5 text-center">
-              <h1>مرحبا بكم في موقع التبادل الطلابي </h1>
+              <h1>{t("WELCOME")} </h1>
               <p>
                 موقع لإدارة التبادل الطلابي بين الجامعات العربية وتنظيم العروض
                 التدريبية والمرشحين لكل تدريب وغيرها من التفاصيل بشكل مرن بحيث

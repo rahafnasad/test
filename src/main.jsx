@@ -6,6 +6,7 @@ import axios from 'axios';
 import './index.css'
 import 'react-toastify/dist/ReactToastify.css';
 import UserContextProvider from './component/dashbord/context/userContext.jsx';
+import './i18n/i18n.ts';
 
 axios.defaults.withCredentials = true;
 axios.defaults.withCredentials = true;
