@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+.email{
+width: 100%;
+}
+.email h1{
+    font-size: 24px;
+    color: rgb(99, 99, 99);
+    font-weight: 500;
+    line-height: 28.7952px;
+    margin: 15px auto ;
+    width: 95%;
+}
+.EmailClassif {
+    border-radius: 5px;
+    width: 17%;
+
+    margin-top: 15px;
+    padding: 10px;
+    margin: auto;
+min-height: calc(100vh/1.4);
+}
+.EmailClassif p{
+    color: rgb(110, 107, 123);
+
+}
+.Tickets,.ticket{
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color:#fff;
+    padding: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.ticketInTickets h5{
+
+    color: rgb(110, 107, 123);
+    font-size: 15px;
+}
+.ticketInTickets{
+    border-bottom: 1px solid #f5f5f5;
+}
+.ticketInTickets:hover{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+
+}
+.ticketInTickets span{
+    color: rgb(110, 107, 123);
+    font-size: 13px;
+    font-weight: 500;
+}
+.ticketInTickets p {
+    color: rgb(110, 106, 118);
+    font-size: 12px;
+
+}
+.EmailClassif a p {
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: "Cairo", sans-serif;
+
+}
+.Tickets h1{
+    font-family: "Cairo", sans-serif;
+
+}
+.ticketInTickets time {
+    font-size: 10px;
+}
+.userInTecket{
+    color: rgb(110, 107, 123);
+    background-color: rgb(210, 207, 228);
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 50%;
+}
+.ticket h2{
+    color: rgb(110, 106, 118);
+    font-family: "Cairo", sans-serif;
+font-size: 17px;
+}
+.ticket span,.ticket p{
+    color: rgb(110, 106, 118);
+
+}
+.ticket p{
+font-size: 14px;
+}
+.ticketContent{
+    border-bottom: 1px solid #f5f5f5;
+
+}
+.replayTicket{
+    align-items: center;
+}
+.replayButton:hover , .closedButton:hover{
+    background-color: rgb(115, 103, 240) !important;
+    
+}

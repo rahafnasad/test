@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    width: 95%;
+    height: 65px;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color:#fff;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    color: black;
+}
+
+.sidebartrigger {
+    border: none;
+    background-color:#fff;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .sidebartrigger {
+        display: none;
+    }
+}

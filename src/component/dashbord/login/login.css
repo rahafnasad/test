@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+p{
+    font-weight: 400;
+    line-height: 21px;
+    color: rgb(204, 204, 204);
+
+}
+.loginHome{
+
+    height: 100vh;
+    background-image:url(../../../../public/home.gif) ;
+    width: 100%;
+}
+.logo .logoImag{
+    width: 60x;
+    height: 60px;
+}
+.logo span {
+    color: rgb(204, 204, 204);
+    font-size: 19px;
+}
+.ovelay{
+min-height: 100vh;
+background-color: rgba(0, 0, 0, 0.8);
+}
+.loginDescription p {
+    font-size: 22px;
+    line-height: 35px;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+
+}
+.loginDescription h1 {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+
+    color: rgb(204, 204, 204);
+text-align: center;
+font-size: 37px;
+margin-bottom: 30px;
+}
+.loginForm{
+    background-color: white;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+
+
+}
+
+.loginForm input  , .loginForm button{
+border: 1px solid #999999;
+width: 82%;
+padding: 10px 0;
+border-radius: 10px;
+
+}
+
+
+.loginForm p {
+    color: #333;
+
+
+}
+a{
+    text-decoration: none;
+}
+input::placeholder {
+    color: #888888;
+    padding: 10px;
+    font-size: 14px;
+    text-align: end;
+  }
+ .loginForm h2{
+    font-size: 25px;
+ }
+ .ErrorInForm{
+    font-size: 13px;
+ }
