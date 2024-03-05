@@ -20,7 +20,7 @@
     color: black;
 }
 
-.sidebartrigger {
+.sidebarTrigger {
     border: none;
     background-color: #fff;
     display: flex;
@@ -34,7 +34,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-    .sidebartrigger {
+    .sidebarTrigger {
         display: none;
     }
 }

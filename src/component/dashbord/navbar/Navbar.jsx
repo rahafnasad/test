@@ -1,4 +1,4 @@
-import * as FiIcons from "react-icons/fi";
+import { FiAlignJustify } from "react-icons/fi";
 import navbar from "./Navbar.module.css";
 
 const Navbar = (prop) => {
@@ -11,8 +11,8 @@ const Navbar = (prop) => {
     <div className={navbar.navbar}>
       <ul>
         <li>
-          <button className={navbar.sidebartrigger} onClick={toggleSidebar}>
-            <FiIcons.FiAlignJustify />
+          <button className={navbar.sidebarTrigger} onClick={toggleSidebar}>
+            <FiAlignJustify />
           </button>
         </li>
       </ul>

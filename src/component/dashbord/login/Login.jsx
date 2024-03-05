@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import "./login.css";
 import { useTranslation } from "react-i18next";
+import "./login.css";
 
 export default function Login() {
   const { t } = useTranslation();

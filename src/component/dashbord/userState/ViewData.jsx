@@ -1,14 +1,13 @@
-import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import "./active.css";
 import InputWihoutValidation from "../input/InputWihoutValidation";
-import "../input/input.css";
-import { array } from "yup";
 import { AiTwotoneInteraction } from "react-icons/ai";
-
-import { Link } from "react-router-dom";
 import CreateUserAdmin from "../CreateUserAdmin/CreateUserAdmin";
 import { UserContext } from "../context/userContext";
+import axios from "axios";
+import "../input/input.css";
+import "./active.css";
+import { useTranslation } from "react-i18next";
+
 export default function ViewData({ data, path, state }) {
   const [users, setUsers] = useState([]);
   const [allCountry, setAllCountry] = useState([]);
@@ -17,12 +16,14 @@ export default function ViewData({ data, path, state }) {
   const [currentPage, setCuurentPage] = useState(1);
   const { ShowAdd } = useContext(UserContext);
   const { setShowAdd } = useContext(UserContext);
+  const { t } = useTranslation();
 
   const getUser = async (page) => {
     var inputName = document.getElementById("ActiveName").value;
     var inputEmail = document.getElementById("ActiveEmail").value;
     var inputCountry = document.getElementById("countryFilter").value;
     var inputRow = (document.getElementById("selectRowAdmin") !== null) ? document.getElementById("selectRowAdmin").value : 10;
+
     setCuurentPage(page);
     try {
       const { data } = await axios({
@@ -57,7 +58,9 @@ export default function ViewData({ data, path, state }) {
     getUser(currentPage);
     viewAllCountry();
   }, []);
+
   if (isLoding) return <h1>wait</h1>;
+
   return (
     <>
       <div className="Active w-100 mb-5">
@@ -66,9 +69,9 @@ export default function ViewData({ data, path, state }) {
             <CreateUserAdmin />
           </>
           : ""}
-        {state != "report" ? <h1>الجامعات</h1> : <h1>التقارير</h1>}
+        {state != "report" ? <h1>{t("VIEW_DATA.UNIVERSITIES")}</h1> : <h1>{t("VIEW_DATA.REPORTS")}</h1>}
         <div className="filter ">
-          <h2 className="me-4">تصنيف</h2>
+          <h2 className="me-4">{t("VIEW_DATA.CLASSIFICATION")}</h2>
           <div className="row">
             <div
               className="col-lg-3"
@@ -80,7 +83,7 @@ export default function ViewData({ data, path, state }) {
                 type="text"
                 id="ActiveName"
                 name="ActiveName"
-                title="اسم الجامعة "
+                title={t("VIEW_DATA.UNIVERSITY_NAME")}
               />
             </div>
             <div
@@ -93,7 +96,7 @@ export default function ViewData({ data, path, state }) {
                 type="text"
                 id="ActiveEmail"
                 name="ActiveEmail"
-                title="ايميل الجامعة"
+                title={t("VIEW_DATA.UNIVERSITY_EMAIL")}
               />
             </div>
             <div
@@ -106,7 +109,7 @@ export default function ViewData({ data, path, state }) {
                 htmlFor="countryFilter"
                 className=" w-100 text-start lableWithoutValidation"
               >
-                <p className="me-2 text-end mt-3">دولة الجامعة</p>
+                <p className="me-2 text-end mt-3">{t("VIEW_DATA.UNIVERSITY_COUNTRY")}</p>
               </label>
               <select
                 name="country"
@@ -114,7 +117,7 @@ export default function ViewData({ data, path, state }) {
                 className="inputWhioutValidation px-5  py-2"
               >
                 <option value="">
-                  <p> اختار دولة</p>
+                  <p>{t("VIEW_DATA.CHOOSE_COUNTRY")}</p>
                 </option>
                 {allCountry.length ? (
                   allCountry.map((country, index) => (
@@ -123,7 +126,7 @@ export default function ViewData({ data, path, state }) {
                     </option>
                   ))
                 ) : (
-                  <p>لا يوجد دول </p>
+                  <p>{t("VIEW_DATA.NO_COUNTRIES")}</p>
                 )}
               </select>
             </div>
@@ -131,14 +134,9 @@ export default function ViewData({ data, path, state }) {
               <div className="col-lg-3">
                 <button
                   className="bg-mainColor mt-5 me-1"
-                  onClick={() => {
-                    setShowAdd(true);
-
-                  }}
-                >
-                  اضافة
+                  onClick={() => setShowAdd(true)}>
+                  {t("VIEW_DATA.ADD")}
                 </button>
-
               </div>
             ) : (
               ""
@@ -149,7 +147,7 @@ export default function ViewData({ data, path, state }) {
           <thead className="getRowOfActive ">
             <tr>
               <th>
-                <p>الاسم</p>
+                <p>{t("VIEW_DATA.NAME")}</p>
               </th>
               {data.map((data, index) => (
                 <th key={index}>
@@ -157,7 +155,7 @@ export default function ViewData({ data, path, state }) {
                 </th>
               ))}
               <th>
-                <p>الدولة</p>
+                <p>{t("VIEW_DATA.COUNTRY")}</p>
               </th>
               <th>
                 <p>action</p>
@@ -166,7 +164,6 @@ export default function ViewData({ data, path, state }) {
           </thead>
 
           <tbody className="GetActiveDate mb-0">
-
             {users.length ? (
               users.map((user, index) => (
                 <tr key={index}>
@@ -187,12 +184,11 @@ export default function ViewData({ data, path, state }) {
                   </td>
                   <td>
                     <AiTwotoneInteraction className="Action" />
-
                   </td>
                 </tr>
               ))
             ) : (
-              <h1>لا يوجد بيانات لعرضها </h1>
+              <h1>{t("VIEW_DATA.NO_DATA")}</h1>
             )}
           </tbody>
         </table>
@@ -205,12 +201,8 @@ export default function ViewData({ data, path, state }) {
                   <select
                     name="selectRow"
                     id="selectRowAdmin"
-                    onChange={() => {
-                      getUser(currentPage);
-                    }}
-                  >
+                    onChange={() => getUser(currentPage)}>
                     <option value="5">5</option>
-
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
@@ -267,7 +259,7 @@ export default function ViewData({ data, path, state }) {
             </div>
           </div> : ""
         }
-      </div>
+      </div >
     </>
   );
 }

@@ -1,4 +1,4 @@
-import * as IoIcons from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import style from './Sidebar.module.css'
 import { NavLink } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const Sidebar = (prop) => {
           <img className={style.logo} src="logo.png" alt="" />
           <h2>IMS</h2>
         </NavLink>
-        <button className={style.closeSidebar} onClick={closeSidebar}><IoIcons.IoClose className={style.closeLogo} /></button></div>
+        <button className={style.closeSidebar} onClick={closeSidebar}><IoClose className={style.closeLogo} /></button></div>
       <ul className={style.sidebarContainer}>
         {
           prop.sidebarItems.map(({ id, content }) => (

@@ -1,9 +1,12 @@
+import { useTranslation } from 'react-i18next';
 import ViewData from './ViewData';
 
 export default function Active() {
+  const { t } = useTranslation();
+
   const data = [
-    { type: "الايميل", name: "email" },
-    { type: "رقم الهاتف", name: "phone" },
+    { type: t("ACTIVE_SUSPENDED.EMAIL"), name: "email" },
+    { type: t("ACTIVE_SUSPENDED.PHONE"), name: "phone" },
   ];
 
   return (

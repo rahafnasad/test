@@ -16,5 +16,48 @@
     "EMAIL": "البريد الإلكتروني",
     "REPORTS": "التقارير",
     "VIEW_REPORTS": "عرض التقارير"
+  },
+  "EMAIL": {
+    "MESSAGES": "الرسائل",
+    "INBOX": "البريد الوارد",
+    "CLOSED": "الرسائل المغلقة",
+    "CLOSE_MESSAGE": "غلق الرسالة",
+    "SEND": "إرسال",
+    "MESSAGE_CLOSED_SUCCESSFULLY": "تم غلق الرسالة بنجاح"
+  },
+  "CREATE_PAGE_2": {
+    "UNIVERSITY_NAME": "اسم الجامعة",
+    "MEMBER_NAME": "اسم العضو",
+    "UNIVERSITY_EMAIL": "البريد الإلكتروني للجامعة",
+    "PHONE": "رقم الهاتف",
+    "FAX": "رقم الفاكس",
+    "ADDRESS": "عنوان الجامعة",
+    "MEMBER_INFO": "بيانات العضو",
+    "ENTER_MEMBER_DATA": "أدخل البيانات المرغوبة الخاصة بالعضو المسؤول عن الجامعة",
+    "PREVIOUS": "السابق",
+    "NEXT": "التالي"
+  },
+  "VIEW_REPORT": {
+    "EMAIL": "البريد الإلكتروني",
+    "OFFERS_RECEIVED": "العروض المستلمة",
+    "OFFERS_SENT": "العروض المرسلة"
+  },
+  "ACTIVE_SUSPENDED": {
+    "EMAIL": "البريد الإلكتروني",
+    "PHONE": "رقم الهاتف"
+  },
+  "VIEW_DATA": {
+    "UNIVERSITIES": "الجامعات",
+    "REPORTS": "التقارير",
+    "CLASSIFICATION": "تصنيف",
+    "UNIVERSITY_NAME":"اسم الجامعة",
+    "UNIVERSITY_EMAIL": "البريد الإلكتروني للجامعة",
+    "UNIVERSITY_COUNTRY": "دولة الجامعة",
+    "CHOOSE_COUNTRY": "اختار دولة",
+    "NO_COUNTRIES": "لا يوجد دول",
+    "ADD": "إضافة",
+    "NAME": "الاسم",
+    "COUNTRY": "الدولة",
+    "NO_DATA": "لا يوجد بيانات لعرضها"
   }
 }

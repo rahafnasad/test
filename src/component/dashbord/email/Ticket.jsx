@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 export default function Ticket() {
   const id = useParams("id").id;
-  const [ticket, setTecket] = useState([]);
+  const [ticket, setTicket] = useState([]);
   const [replay, setReplay] = useState(false);
   const { state } = useContext(UserContext);
 
@@ -19,7 +19,7 @@ export default function Ticket() {
       withCredentials: true,
     });
     console.log(data.result);
-    setTecket(data.result);
+    setTicket(data.result);
   };
 
   const closedTicket = async () => {
@@ -29,7 +29,7 @@ export default function Ticket() {
       withCredentials: true,
     });
     console.log(data);
-    toast("تم غلق الرسالة بنجاح", {
+    toast(t("EMAIL.MESSAGE_CLOSED_SUCCESSFULLY"), {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -69,14 +69,14 @@ export default function Ticket() {
   return (
     <div className="ticket">
       {ticket
-        ? ticket.map((tickett, index) => (
+        ? ticket.map((ticket, index) => (
           <div className="ticketContent" key={index}>
-            {index == 0 ? <h2 className="mt-2">{tickett.subject}</h2> : ""}
+            {index == 0 ? <h2 className="mt-2">{ticket.subject}</h2> : ""}
             <div className="d-flex mt-4">
               <FaUser className="userInTecket" />
-              <span className="me-2 mt-2"> {tickett.from}</span>
+              <span className="me-2 mt-2"> {ticket.from}</span>
             </div>
-            <p className="me-5 mt-2">{tickett.body}</p>
+            <p className="me-5 mt-2">{ticket.body}</p>
           </div>
         ))
         : ""}
@@ -95,7 +95,7 @@ export default function Ticket() {
               <button
                 className="bg-secondary text-white border-0 mt-3 me-2 px-3 py-2 rounded-1 closedButton"
                 onClick={closedTicket}>
-                غلق الرسالة
+                {t("EMAIL.CLOSE_MESSAGE")}
                 <BsArrowReturnLeft />
               </button>
             </div>
@@ -113,7 +113,7 @@ export default function Ticket() {
                   setReplay(false);
                   getReplay();
                 }}>
-                ارسال
+                {t("EMAIL.SEND")}
                 <BsArrowReturnLeft />
               </button>
             </div>

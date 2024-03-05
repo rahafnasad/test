@@ -1,16 +1,20 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { logInSchema } from '../Validation/logInSchema';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import Input from '../input/Input';
+import { logInSchema } from '../Validation/logInSchema';
 import { UserContext } from '../context/userContext';
+import { useTranslation } from 'react-i18next';
+import Input from '../input/Input';
 import '../input/input.css';
 import './createuser.css';
 
 export default function CreatePage2() {
   const { setIsPAge1Active } = useContext(UserContext);
-
+  const { t } = useTranslation();
   const [error, setError] = useState(false);
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+
   const initialValues = {
     uni_name_ar: '',
     uni_name_eng: '',
@@ -20,10 +24,6 @@ export default function CreatePage2() {
     uni_address: '',
     uni_url: '',
   };
-
-  const [values, setValues] = useState(initialValues);
-  const [errors, setErrors] = useState({});
-  const [touched, setTouched] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,42 +46,42 @@ export default function CreatePage2() {
       id: 'uni_name_ar',
       type: 'text',
       name: 'uni_name_ar',
-      title: 'اسم الجامعة',
+      title: t("CREATE_PAGE_2.UNIVERSITY_NAME"),
       value: values.uni_name_ar,
     },
     {
       id: 'uni_name_eng',
       type: 'text',
       name: 'uni_name_eng',
-      title: 'اسم العضو',
+      title: t("CREATE_PAGE_2.MEMBER_NAME"),
       value: values.uni_name_eng,
     },
     {
       id: 'uni_email',
       type: 'email',
       name: 'uni_email',
-      title: 'ايميل الجامعة',
+      title: t("CREATE_PAGE_2.UNIVERSITY_EMAIL"),
       value: values.uni_email,
     },
     {
       id: 'uni_phone',
       type: 'text',
       name: 'uni_phone',
-      title: 'رقم الهاتف',
+      title: t("CREATE_PAGE_2.PHONE"),
       value: values.uni_phone,
     },
     {
       id: 'uni_fax',
       type: 'text',
       name: 'uni_fax',
-      title: 'رقم الفاكس',
+      title: t("CREATE_PAGE_2.FAX"),
       value: values.uni_fax,
     },
     {
       id: 'uni_address',
       type: 'text',
       name: 'uni_address',
-      title: 'عنوان الجامعة',
+      title: t("CREATE_PAGE_2.ADDRESS"),
       value: values.uni_address,
     },
     {
@@ -124,20 +124,19 @@ export default function CreatePage2() {
     <div className="adduser d-flex justify-content-center align-content-center">
       <div className="formCreateUser mt-5 mx-3">
         <form onSubmit={handleSubmit}>
-          <p className="userTitel mb-0 me-3">بيانات العضو</p>
-          <p className="userDes mt-1 me-3">أدخل البيانات المرغوبة الخاصة بالعضو المسؤول عن الجامعة</p>
+          <p className="userTitel mb-0 me-3">{t("CREATE_PAGE_2.MEMBER_INFO")}</p>
+          <p className="userDes mt-1 me-3">{t("CREATE_PAGE_2.ENTER_MEMBER_DATA")}</p>
           <div className="row">{renderInput}</div>
           <div className="d-flex justify-content-between mt-5">
             <button className="bg-white prev " onClick={() => setIsPAge1Active(true)}>
               <FaArrowRight className="ms-2" />
-              السابق
+              {t("CREATE_PAGE_2.PREVIOUS")}
             </button>
             <button
               type="submit"
               id="submit"
-              className={`next mt-2 bg-success text-white${error ? ' mb-1' : ' mb-5'}`}
-            >
-              التالي
+              className={`next mt-2 bg-success text-white${error ? ' mb-1' : ' mb-5'}`}>
+              {t("CREATE_PAGE_2.NEXT")}
               <FaArrowLeft className="me-2" />
             </button>
           </div>

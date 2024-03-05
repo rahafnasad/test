@@ -3,8 +3,8 @@ import ViewData from './ViewData';
 
 export default function Saspended() {
   const data = [
-    { type: "الايميل", name: "email" },
-    { type: "رقم الهاتف", name: "phone" },
+    { type: t("ACTIVE_SUSPENDED.EMAIL"), name: "email" },
+    { type: t("ACTIVE_SUSPENDED.PHONE"), name: "phone" },
   ];
   
   return (

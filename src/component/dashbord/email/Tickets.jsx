@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { UserContext } from "../context/userContext";
-import "./email.css";
 import moment from "moment";
+import axios from "axios";
+import "./email.css";
 
 export default function Tickets() {
-  const [tickets, setTeckets] = useState([]);
+  const [tickets, setTickets] = useState([]);
   const { state } = useContext(UserContext);
 
   const getTickets = async () => {
@@ -16,7 +16,7 @@ export default function Tickets() {
 
       withCredentials: true,
     });
-    setTeckets(data.result);
+    setTickets(data.result);
   };
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Tickets() {
       <div className="Tickets">
         <div className="TicketsContent mx-0 ">
           {tickets.length ? (
-            tickets.map((ticket, index) =>
+            tickets.map((ticket) =>
               (state == "البريد الوارد" && ticket.closed == false) ||
                 (state == "الرسائل المغلقة" && ticket.closed == true) ? (
                 <div className="ticketInTickets d-flex mx-0 mt-1" key={ticket.index}>

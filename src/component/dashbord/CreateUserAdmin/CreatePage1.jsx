@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
-import Input from '../input/Input';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { UserContext } from '../context/userContext';
 import { useFormik } from 'formik';
 import { logInSchema } from '../Validation/logInSchema';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Input from '../input/Input';
 import './createuser.css'
 import '../input/input.css';
 

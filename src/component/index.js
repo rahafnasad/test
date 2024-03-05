@@ -10,6 +10,7 @@ import ViewReport from "./dashbord/report/ViewReport";
 import CreatePage1 from "./dashbord/CreateUserAdmin/CreatePage1";
 import Ticket from "./dashbord/email/Ticket";
 import Tickets from "./dashbord/email/Tickets";
+import Input from "./dashbord/input/Input";
 
 export {
   Login,
@@ -23,5 +24,6 @@ export {
   ViewReport,
   CreatePage1,
   Ticket,
-  Tickets
+  Tickets,
+  Input
 }
