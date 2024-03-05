@@ -5,9 +5,12 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import Input from "../input/Input";
 import { logInSchema } from "../Validation/logInSchema";
+import { useTranslation } from "react-i18next";
 
 export default function LoginForm() {
   const [error, setError] = useState(false);
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const initialValues = {
@@ -82,20 +85,20 @@ export default function LoginForm() {
 
   return (
     <>
-      <p className="pt-5 me-5 text-start text-end">مرحبا بعودتك</p>
-      <h2 className="me-5 text-start mb-2 text-end">تسجيل الدخول الى حسابك </h2>
+      <p className="pt-5 me-5 text-start text-end">{t("LOGIN_FORM.WELCOME_BACK")}</p>
+      <h2 className="me-5 text-start mb-2 text-end">{t("LOGIN_FORM.ACCOUNT_LOGIN")}</h2>
       <form onSubmit={formik.handleSubmit}>
         {renderInput}
         <Link to="sendCode">
           {" "}
-          <p className="text-end me-5 mt-3">هل نسيت كلمة المرور ؟ </p>
+          <p className="text-end me-5 mt-3">{t("LOGIN_FORM.FORGOT_PASSWORD")}</p>
         </Link>
         <button
           type="submit"
           id="submit"
           className={`mt-2 bg-mainColor text-white${error ? " mb-1" : " mb-5"}`}
           disabled={!formik.isValid}>
-          تسجيل الدخول
+            {t("LOGIN_FORM.LOGIN")}
         </button>
         {
           error &&
