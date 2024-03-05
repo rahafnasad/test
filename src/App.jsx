@@ -2,19 +2,21 @@ import { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Login from "./component/dashbord/login/Login";
-import LoginForm from "./component/dashbord/login/LoginForm";
-import SendCode from "./component/dashbord/forgotPassword/SendCode";
-import EnterCode from "./component/dashbord/forgotPassword/EnterCode";
-import Root from "./component/dashbord/root/Root";
-import Active from "./component/dashbord/userState/Active";
-import Saspended from "./component/dashbord/userState/Saspended";
-import Email from "./component/dashbord/email/Email";
-import ViewReport from "./component/dashbord/report/ViewReport";
-import CreatePage1 from "./component/dashbord/CreateUserAdmin/CreatePage1";
 import { UserContext } from "./component/dashbord/context/userContext";
-import Tickets from "./component/dashbord/email/Tickets";
-import Ticket from "./component/dashbord/email/Ticket";
+import {
+  Login,
+  Active,
+  CreatePage1,
+  Email,
+  EnterCode,
+  LoginForm,
+  Root,
+  Saspended,
+  SendCode,
+  Ticket,
+  Tickets,
+  ViewReport
+} from './component/index'
 
 function App() {
   const { ShowAdd } = useContext(UserContext);

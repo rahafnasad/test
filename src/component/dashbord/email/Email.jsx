@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
-import { UserContext } from "../context/userContext";
 import { IoLockClosedSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+import { Link, Outlet } from "react-router-dom";
+import { UserContext } from "../context/userContext";
 
 export default function Email() {
   const { setState } = useContext(UserContext);
