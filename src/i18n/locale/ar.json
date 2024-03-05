@@ -7,5 +7,14 @@
     "WELCOME_BACK": "مرحباً بعودتك",
     "ACCOUNT_LOGIN": "تسجيل الدخول إلى حسابك",
     "LOGIN": "تسجيل الدخول"
+  },
+  "SIDEBAR_ITEMS": {
+    "UNIVERSITIES": "الجامعات",
+    "ACTIVE": "النشطة",
+    "SUSPENDED": "المعلقة",
+    "APP_AND_PAGES": "التطبيقات والصفحات",
+    "EMAIL": "البريد الإلكتروني",
+    "REPORTS": "التقارير",
+    "VIEW_REPORTS": "عرض التقارير"
   }
 }

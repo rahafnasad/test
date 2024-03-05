@@ -10,18 +10,20 @@ const Sidebar = (prop) => {
 
   return (
     <div className={style.sidebar}>
-      <div className={style.sidebarheader}>
-        <NavLink className={style.logolink}>
+      <div className={style.sidebarHeader}>
+        <NavLink className={style.logoLink}>
           <img className={style.logo} src="logo.png" alt="" />
           <h2>IMS</h2>
         </NavLink>
-        <button className={style.closesidebar} onClick={closeSidebar}><IoIcons.IoClose className={style.closelogo} /></button></div>
-      <ul className={style.sidebarcontainer}>
-        {prop.sidebarItems.map(({ id, content }) => (
-          <li key={id}>
-            {content}
-          </li>
-        ))}
+        <button className={style.closeSidebar} onClick={closeSidebar}><IoIcons.IoClose className={style.closeLogo} /></button></div>
+      <ul className={style.sidebarContainer}>
+        {
+          prop.sidebarItems.map(({ id, content }) => (
+            <li key={id}>
+              {content}
+            </li>
+          ))
+        }
       </ul>
     </div>
   )
