@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import InputWihoutValidation from "../input/InputWihoutValidation";
+import InputWithoutValidation from "../input/InputWithoutValidation";
 import { AiTwotoneInteraction } from "react-icons/ai";
 import CreateUserAdmin from "../CreateUserAdmin/CreateUserAdmin";
 import { UserContext } from "../context/userContext";
@@ -74,7 +74,7 @@ export default function ViewData({ data, path, state }) {
           <h2 className="me-4">{t("VIEW_DATA.CLASSIFICATION")}</h2>
           <div className="row">
             <div className="col-lg-3" onChange={() => getUser(currentPage)}>
-              <InputWihoutValidation
+              <InputWithoutValidation
                 type="text"
                 id="ActiveName"
                 name="ActiveName"
@@ -82,7 +82,7 @@ export default function ViewData({ data, path, state }) {
               />
             </div>
             <div className="col-lg-3" onChange={() => getUser(currentPage)}>
-              <InputWihoutValidation
+              <InputWithoutValidation
                 type="text"
                 id="ActiveEmail"
                 name="ActiveEmail"

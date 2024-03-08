@@ -9,7 +9,8 @@
     "LOGIN": "تسجيل الدخول",
     "USERNAME": "اسم المستخدم",
     "PASSWORD": "كلمة المرور",
-    "LOGIN_SUCCESSFULLY": "تم تسجيل الدخول بنجاح"
+    "LOGIN_SUCCESSFULLY": "تم تسجيل الدخول بنجاح",
+    "CHECK_PASSWORD": "الرجاء التحقق من اسم المستخدم أو كلمة المرور"
   },
   "SIDEBAR_ITEMS": {
     "UNIVERSITIES": "الجامعات",

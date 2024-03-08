@@ -21,7 +21,7 @@ export default function LoginForm() {
   const onSubmit = async (user) => {
 
     try {
-      const data = await axios({
+      await axios({
         method: "post",
         url: `${import.meta.env.VITE_API_URL}/api/v1/auth/signin`,
         data: user,
@@ -98,11 +98,11 @@ export default function LoginForm() {
           id="submit"
           className={`mt-2 bg-mainColor text-white${error ? " mb-1" : " mb-5"}`}
           disabled={!formik.isValid}>
-            {t("LOGIN_FORM.LOGIN")}
+          {t("LOGIN_FORM.LOGIN")}
         </button>
         {
           error &&
-          <p className=" text-end me-5 pe-4 mt-0 w-100 text-danger mb-0 ErrorInForm mb-5">الرجاء التحقق من اسم المستخدم كلمة السر </p>
+          <p className=" text-end me-5 pe-4 mt-0 w-100 text-danger mb-0 ErrorInForm mb-5">{t("LOGIN_FORM.CHECK_PASSWORD")}</p>
         }
       </form>
     </>

@@ -1,14 +1,15 @@
 import { FiAlignJustify } from "react-icons/fi";
 import navbar from "./Navbar.module.css";
 
-const Navbar = (prop) => {
+const Navbar = (props) => {
 
   const toggleSidebar = () => {
-    prop.setShowSideBar(!prop.showSideBar);
+    props.setShowSideBar(!props.showSideBar);
   };
 
   return (
     <div className={navbar.navbar}>
+      //TODO: is it necessary ?
       <ul>
         <li>
           <button className={navbar.sidebarTrigger} onClick={toggleSidebar}>

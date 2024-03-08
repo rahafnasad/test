@@ -3,7 +3,6 @@ import { Outlet, NavLink } from "react-router-dom";
 import Sidebar from "../sidebar/Sidebar";
 import Navbar from "../navbar/Navbar";
 import root from './Root.module.css'
-
 import { MdOutlineMail } from "react-icons/md";
 import { TbReportSearch } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa6";
@@ -24,6 +23,7 @@ const Root = () => {
     {
       id: "active",
       content: (
+        // TODO: isActive is not used
         <NavLink to='' className={({ isActive }) => IsActiveActive ? style.activeLink : style.unActiveLink}
           onClick={() => { setIsActiveActive(true) }}
         >
@@ -93,14 +93,14 @@ const Root = () => {
     };
   }, []);
 
-  const closeSidebar = () => {
+  const toggleSideBar = () => {
     setShowSideBar(!showSideBar);
   };
 
   return (
     <>
       <div className={root.container}>
-        <div className={showSideBar ? root.background : ""} onClick={closeSidebar}></div>
+        <div className={showSideBar ? root.background : ""} onClick={toggleSideBar}></div>
         {
           <div className={showSideBar ? root.sidebarContainerShow : root.sidebarContainerHide}>
             <Sidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} sidebarItems={sidebarItems} />
