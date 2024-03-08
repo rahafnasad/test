@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { logInSchema } from '../Validation/logInSchema';
-import { UserContext } from '../context/userContext';
+import { UserContext } from '../../../context/userContext';
 import { useTranslation } from 'react-i18next';
 import Input from '../input/Input';
 import '../input/input.css';

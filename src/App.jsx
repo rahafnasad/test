@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { UserContext } from "./component/dashbord/context/userContext";
+import { UserContext } from "./context/userContext";
 import {
   Login,
   Active,

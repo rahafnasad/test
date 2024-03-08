@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../context/userContext";
+import { UserContext } from "../../../context/userContext";
 import axios from "axios";
 import "./email.css";
 import { formatDate } from "~/utils/formatDate";

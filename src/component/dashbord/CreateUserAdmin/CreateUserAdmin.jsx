@@ -3,7 +3,7 @@ import { Link, } from 'react-router-dom'
 import CreatePage1 from './CreatePage1'
 import CreatePage2 from './CreatePage2';
 import { IoCloseOutline } from "react-icons/io5";
-import { UserContext } from '../context/userContext';
+import { UserContext } from '../../../context/userContext';
 
 export default function CreateUserAdmin() {
   const { isPage1Active } = useContext(UserContext);

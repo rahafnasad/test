@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
-import { UserContext } from "../context/userContext";
+import { UserContext } from "../../../context/userContext";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
