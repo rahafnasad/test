@@ -28,7 +28,7 @@ export default function LoginForm() {
       });
       navigate("/homeAdmin");
 
-      toast('تم تسجيل الدخول بنجاح', {
+      toast(t("LOGIN_FORM.LOGIN_SUCCESSFULLY"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
