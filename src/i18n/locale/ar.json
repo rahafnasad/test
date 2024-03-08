@@ -6,7 +6,9 @@
     "FORGOT_PASSWORD": "هل نسيت كلمة المرور؟",
     "WELCOME_BACK": "مرحباً بعودتك",
     "ACCOUNT_LOGIN": "تسجيل الدخول إلى حسابك",
-    "LOGIN": "تسجيل الدخول"
+    "LOGIN": "تسجيل الدخول",
+    "USERNAME": "اسم المستخدم",
+    "PASSWORD": "كلمة المرور"
   },
   "SIDEBAR_ITEMS": {
     "UNIVERSITIES": "الجامعات",
@@ -50,7 +52,7 @@
     "UNIVERSITIES": "الجامعات",
     "REPORTS": "التقارير",
     "CLASSIFICATION": "تصنيف",
-    "UNIVERSITY_NAME":"اسم الجامعة",
+    "UNIVERSITY_NAME": "اسم الجامعة",
     "UNIVERSITY_EMAIL": "البريد الإلكتروني للجامعة",
     "UNIVERSITY_COUNTRY": "دولة الجامعة",
     "CHOOSE_COUNTRY": "اختار دولة",
@@ -59,5 +61,13 @@
     "NAME": "الاسم",
     "COUNTRY": "الدولة",
     "NO_DATA": "لا يوجد بيانات لعرضها"
+  },
+  "VALIDATION": {
+    "USERNAME": "يجب أن يكون على الأقل 4 رموز",
+    "PASSWORD": "يجب أن يكون على الأقل 6 رموز"
+  },
+  "REQUIRED": {
+    "USERNAME": "اسم المستخدم مطلوب",
+    "PASSWORD": "كلمة المرور مطلوبة"
   }
 }

@@ -38,7 +38,7 @@ export default function ViewData({ data, path, state }) {
 
       setUsers(data.result);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -50,7 +50,7 @@ export default function ViewData({ data, path, state }) {
       });
       setAllCountry(data.result);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -73,12 +73,7 @@ export default function ViewData({ data, path, state }) {
         <div className="filter ">
           <h2 className="me-4">{t("VIEW_DATA.CLASSIFICATION")}</h2>
           <div className="row">
-            <div
-              className="col-lg-3"
-              onChange={() => {
-                getUser(currentPage);
-              }}
-            >
+            <div className="col-lg-3" onChange={() => getUser(currentPage)}>
               <InputWihoutValidation
                 type="text"
                 id="ActiveName"
@@ -86,12 +81,7 @@ export default function ViewData({ data, path, state }) {
                 title={t("VIEW_DATA.UNIVERSITY_NAME")}
               />
             </div>
-            <div
-              className="col-lg-3 "
-              onChange={() => {
-                getUser(currentPage);
-              }}
-            >
+            <div className="col-lg-3" onChange={() => getUser(currentPage)}>
               <InputWihoutValidation
                 type="text"
                 id="ActiveEmail"
@@ -99,23 +89,11 @@ export default function ViewData({ data, path, state }) {
                 title={t("VIEW_DATA.UNIVERSITY_EMAIL")}
               />
             </div>
-            <div
-              className="col-lg-3"
-              onChange={() => {
-                getUser(currentPage);
-              }}
-            >
-              <label
-                htmlFor="countryFilter"
-                className=" w-100 text-start lableWithoutValidation"
-              >
+            <div className="col-lg-3" onChange={() => getUser(currentPage)}>
+              <label htmlFor="countryFilter" className=" w-100 text-start lableWithoutValidation">
                 <p className="me-2 text-end mt-3">{t("VIEW_DATA.UNIVERSITY_COUNTRY")}</p>
               </label>
-              <select
-                name="country"
-                id="countryFilter"
-                className="inputWhioutValidation px-5  py-2"
-              >
+              <select name="country" id="countryFilter" className="inputWhioutValidation px-5 py-2">
                 <option value="">
                   <p>{t("VIEW_DATA.CHOOSE_COUNTRY")}</p>
                 </option>
@@ -198,10 +176,7 @@ export default function ViewData({ data, path, state }) {
               <div className="rowAdmin">
                 <div className="d-flex">
                   <p className="mt-3 mx-2">Rows Per Page</p>
-                  <select
-                    name="selectRow"
-                    id="selectRowAdmin"
-                    onChange={() => getUser(currentPage)}>
+                  <select name="selectRow" id="selectRowAdmin" onChange={() => getUser(currentPage)}>
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
@@ -229,9 +204,7 @@ export default function ViewData({ data, path, state }) {
                       <li
                         key={index}
                         className="page-item "
-                        onClick={() => {
-                          getUser(index + 1);
-                        }}
+                        onClick={() => getUser(index + 1)}
                         value={index + 1}
                       >
                         <a className="page-link" href="#">

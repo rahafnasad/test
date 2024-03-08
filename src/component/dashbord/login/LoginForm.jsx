@@ -48,7 +48,7 @@ export default function LoginForm() {
   const formik = useFormik({
     initialValues,
     onSubmit,
-    validationSchema: logInSchema,
+    validationSchema: logInSchema(t),
   });
 
   const inputs = [
@@ -56,14 +56,14 @@ export default function LoginForm() {
       id: "username",
       type: "text",
       name: "username",
-      title: "اسم المستخدم",
+      title: t("LOGIN_FORM.USERNAME"),
       value: formik.values.username,
     },
     {
       id: "password",
       type: "password",
       name: "password",
-      title: "كلمة المرور",
+      title: t("LOGIN_FORM.PASSWORD"),
       value: formik.values.password,
     },
   ];

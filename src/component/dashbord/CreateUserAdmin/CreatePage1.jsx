@@ -6,11 +6,13 @@ import { logInSchema } from '../Validation/logInSchema';
 import Input from '../input/Input';
 import './createuser.css'
 import '../input/input.css';
+import { useTranslation } from 'react-i18next';
 
 export default function CreatePage1() {
   const { setIsPAge1Active } = useContext(UserContext);
   const { setUserInPagre1 } = useContext(UserContext);
   const [error, setError] = useState(false);
+  const { t } = useTranslation();
 
   const initialValues = {
     username: "",
@@ -25,7 +27,7 @@ export default function CreatePage1() {
   const formik = useFormik({
     initialValues,
     onSubmit,
-    validationSchema: logInSchema,
+    validationSchema: logInSchema(t),
   });
 
   const inputs = [
