@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/userContext";
-import moment from "moment";
 import axios from "axios";
 import "./email.css";
+import { formatDate } from "~/utils/formatDate";
 
 export default function Tickets() {
   const [tickets, setTickets] = useState([]);
@@ -41,7 +41,7 @@ export default function Tickets() {
                         <p> {ticket.body.substring(0, 15)} ... </p>
                       </div>
                       <p className="ms-2 time">
-                        {moment(ticket.createdAt).format("YYYY-MM-DD HH:mm:ss")}
+                        {formatDate(ticket.createdAt)}
                       </p>
                     </div></Link>
                 </div>

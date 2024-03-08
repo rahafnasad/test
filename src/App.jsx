@@ -11,7 +11,7 @@ import {
   EnterCode,
   LoginForm,
   Root,
-  Saspended,
+  Suspended,
   SendCode,
   Ticket,
   Tickets,
@@ -51,8 +51,8 @@ function App() {
           element: <Active />,
         },
         {
-          path: "saspended",
-          element: <Saspended />
+          path: "suspended",
+          element: <Suspended />
         },
         {
           path: "email",

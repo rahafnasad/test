@@ -35,7 +35,7 @@ const Root = () => {
     {
       id: "suspended",
       content: (
-        <NavLink to='saspended' className={({ isActive }) => isActive ? style.activeLink : style.unActiveLink}
+        <NavLink to='suspended' className={({ isActive }) => isActive ? style.activeLink : style.unActiveLink}
           onClick={() => { setIsActiveActive(false) }}
         >
           <FiUserX className={style.linksLogos} />

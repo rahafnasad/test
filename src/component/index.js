@@ -4,7 +4,7 @@ import SendCode from "./dashbord/forgotPassword/SendCode";
 import EnterCode from "./dashbord/forgotPassword/EnterCode";
 import Root from "./dashbord/root/Root";
 import Active from "./dashbord/userState/Active";
-import Saspended from "./dashbord/userState/Saspended";
+import Suspended from "./dashbord/userState/Suspended";
 import Email from "./dashbord/email/Email";
 import ViewReport from "./dashbord/report/ViewReport";
 import CreatePage1 from "./dashbord/CreateUserAdmin/CreatePage1";
@@ -19,7 +19,7 @@ export {
   EnterCode,
   Root,
   Active,
-  Saspended,
+  Suspended,
   Email,
   ViewReport,
   CreatePage1,
