@@ -26,7 +26,7 @@ export default function LoginForm() {
         url: `${import.meta.env.VITE_API_URL}/api/v1/auth/signin`,
         data: user,
       });
-      navigate("/homeAdmin");
+      navigate("/admin");
 
       toast(t("LOGIN_FORM.LOGIN_SUCCESSFULLY"), {
         position: "top-right",
@@ -89,7 +89,7 @@ export default function LoginForm() {
       <h2 className="me-5 text-start mb-2 text-end">{t("LOGIN_FORM.ACCOUNT_LOGIN")}</h2>
       <form onSubmit={formik.handleSubmit}>
         {renderInput}
-        <Link to="sendCode">
+        <Link to="send-code">
           {" "}
           <p className="text-end me-5 mt-3">{t("LOGIN_FORM.FORGOT_PASSWORD")}</p>
         </Link>

@@ -67,7 +67,7 @@ const Root = () => {
     {
       id: "viewReport",
       content: (
-        <NavLink to='viewReports' className={({ isActive }) => isActive ? style.activeLink : style.unActiveLink}
+        <NavLink to='reports' className={({ isActive }) => isActive ? style.activeLink : style.unActiveLink}
           onClick={() => { setIsActiveActive(false) }}
         >
           <TbReportSearch className={style.linksLogos} />

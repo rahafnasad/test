@@ -31,11 +31,11 @@ function App() {
           element: <LoginForm />,
         },
         {
-          path: "sendCode",
+          path: "send-code",
           element: <SendCode />,
         },
         {
-          path: "enterCode",
+          path: "enter-code",
           element: <EnterCode />,
         },
       ],
@@ -43,7 +43,7 @@ function App() {
       errorElement: <h2> 404 bage not found -- user</h2>,
     },
     {
-      path: "/homeAdmin",
+      path: "/admin",
       element: <Root />,
       children: [
         {
@@ -72,7 +72,7 @@ function App() {
           ]
         },
         {
-          path: "viewReports",
+          path: "reports",
           element: <ViewReport />
         },
         {
