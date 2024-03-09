@@ -9,7 +9,7 @@ const Navbar = (props) => {
 
   return (
     <div className={navbar.navbar}>
-      //TODO: is it necessary ?
+      {/* //TODO: is it necessary ? */}
       <ul>
         <li>
           <button className={navbar.sidebarTrigger} onClick={toggleSidebar}>
