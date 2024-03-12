@@ -100,3 +100,11 @@
   width: 20px;
   height: 30px;
 }
+
+.spinner-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}

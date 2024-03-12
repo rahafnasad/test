@@ -124,7 +124,7 @@ export default function ViewData({ data, path, state }) {
       </div>
       {
         isLoading
-          ? <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          ? <div className="spinner-container">
             <Spinner />
             {t("VIEW_DATA.DATA_LOADING")}
           </div>
@@ -201,10 +201,7 @@ export default function ViewData({ data, path, state }) {
                           <a
                             className="page-link"
                             href="#"
-                            onClick={() => {
-                              currentPage > 1 ? getUser(currentPage - 1) : "";
-                            }}
-                          >
+                            onClick={() => currentPage > 1 && getUser(currentPage - 1)}>
                             Previous
                           </a>
                         </li>
@@ -213,8 +210,7 @@ export default function ViewData({ data, path, state }) {
                             key={index}
                             className="page-item "
                             onClick={() => getUser(index + 1)}
-                            value={index + 1}
-                          >
+                            value={index + 1}>
                             <a className="page-link" href="#">
                               {index + 1}
                             </a>
@@ -225,12 +221,7 @@ export default function ViewData({ data, path, state }) {
                           <a
                             className="page-link"
                             href="#"
-                            onClick={() => {
-                              currentPage < NumberOfPage
-                                ? getUser(currentPage + 1)
-                                : "";
-                            }}
-                          >
+                            onClick={() => currentPage < NumberOfPage && getUser(currentPage + 1)}>
                             Next
                           </a>
                         </li>
@@ -242,7 +233,6 @@ export default function ViewData({ data, path, state }) {
             </>
           )
       }
-
     </div >
   );
 }
