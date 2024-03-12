@@ -11,6 +11,7 @@ import CreatePage1 from "./dashbord/CreateUserAdmin/CreatePage1";
 import Ticket from "./dashbord/email/Ticket";
 import Tickets from "./dashbord/email/Tickets";
 import Input from "./dashbord/input/Input";
+import Spinner from "./spinner/Spinner";
 
 export {
   Login,
@@ -25,5 +26,6 @@ export {
   CreatePage1,
   Ticket,
   Tickets,
-  Input
+  Input,
+  Spinner
 }
