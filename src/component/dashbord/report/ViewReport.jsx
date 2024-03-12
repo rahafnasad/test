@@ -1,6 +1,7 @@
 import React from 'react'
 import ViewData from '../userState/ViewData';
 import { useTranslation } from 'react-i18next';
+import { VIEW_DATA_STATES } from '../../../data/constants';
 
 export default function ViewReport() {
   const { t } = useTranslation();
@@ -11,6 +12,6 @@ export default function ViewReport() {
     { type: t("VIEW_REPORT.OFFERS_SENT"), name: "offersSent" },
   ];
   return (
-    <ViewData data={data} path="/api/v1/dashboard/reports?" state="report" />
+    <ViewData data={data} path="/api/v1/dashboard/reports?" state={VIEW_DATA_STATES.REPORT} />
   )
 }

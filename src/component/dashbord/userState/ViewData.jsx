@@ -103,7 +103,7 @@ export default function ViewData({ data, path, state }) {
               {allCountry.length ? (
                 allCountry.map((country, index) => (
                   <option key={index} value={country.id}>
-                    <p> {country.name_ar}</p>
+                    <p>{country.name_ar}</p>
                   </option>
                 ))
               ) : (
@@ -128,109 +128,109 @@ export default function ViewData({ data, path, state }) {
             <Spinner />
             {t("VIEW_DATA.DATA_LOADING")}
           </div>
-          : (users.length
-            && <>
-              <table className="mt-4 ViewDataTable">
-                <thead className="getRowOfActive ">
-                  <tr>
-                    <th>
-                      <p>{t("VIEW_DATA.NAME")}</p>
-                    </th>
-                    {data.map((data, index) => (
-                      <th key={index}>
-                        <p>{data.type}</p>
+          : (
+            users.length
+              ? <>
+                <table className="mt-4 ViewDataTable">
+                  <thead className="getRowOfActive ">
+                    <tr>
+                      <th>
+                        <p>{t("VIEW_DATA.NAME")}</p>
                       </th>
-                    ))}
-                    <th>
-                      <p>{t("VIEW_DATA.COUNTRY")}</p>
-                    </th>
-                    <th>
-                      <p>action</p>
-                    </th>
-                  </tr>
-                </thead>
+                      {data.map((data, index) => (
+                        <th key={index}>
+                          <p>{data.type}</p>
+                        </th>
+                      ))}
+                      <th>
+                        <p>{t("VIEW_DATA.COUNTRY")}</p>
+                      </th>
+                      <th>
+                        <p>action</p>
+                      </th>
+                    </tr>
+                  </thead>
 
-                <tbody className="GetActiveDate mb-0">
-                  {users.length ? (
-                    users.map((user, index) => (
-                      <tr key={index}>
-                        <td>
-                          <div className="d-flex">
-                            <img src={user.image} alt="logo" className="universityImage" />
-                            <p className="me-2">{user.name_ar}</p>
-
-                          </div>
-                        </td>
-                        {data.map((data, index) => (
-                          <td key={index}>
-                            <p className="me-2">{user[data.name]}</p>
+                  <tbody className="GetActiveDate mb-0">
+                    {
+                      users.map((user, index) => (
+                        <tr key={index}>
+                          <td>
+                            <div className="d-flex">
+                              <img src={user.image} alt="logo" className="universityImage" />
+                              <p className="me-2">{user.name_ar}</p>
+                            </div>
                           </td>
-                        ))}
-                        <td>
-                          <p className="me-2">{user.City.Country.name_ar}</p>
-                        </td>
-                        <td>
-                          <AiTwotoneInteraction className="Action" />
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <h1>{t("VIEW_DATA.NO_DATA")}</h1>
-                  )}
-                </tbody>
-              </table>
-              <div className="AdmainPaginationAndRow mt-0 ">
-                <div className="d-flex justify-content-center ">
-                  <div className="rowAdmin">
-                    <div className="d-flex">
-                      <p className="mt-3 mx-2">Rows Per Page</p>
-                      <select name="selectRow" id="selectRowAdmin" onChange={() => getUser(currentPage)}>
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="25">25</option>
-                        <option value="30">30</option>
-                      </select>
+                          {data.map((data, index) => (
+                            <td key={index}>
+                              <p className="me-2">{user[data.name]}</p>
+                            </td>
+                          ))}
+                          <td>
+                            <p className="me-2">{user.City.Country.name_ar}</p>
+                          </td>
+                          <td>
+                            <AiTwotoneInteraction className="Action" />
+                          </td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+                <div className="AdmainPaginationAndRow mt-0 ">
+                  <div className="d-flex justify-content-center ">
+                    <div className="rowAdmin">
+                      <div className="d-flex">
+                        <p className="mt-3 mx-2">Rows Per Page</p>
+                        <select name="selectRow" id="selectRowAdmin" onChange={() => getUser(currentPage)}>
+                          <option value="5">5</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">25</option>
+                          <option value="30">30</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-                  <div className="paginationAdmin ">
-                    <nav aria-label="Page navigation example">
-                      <ul className="pagination mt-2 ms-3">
-                        <li className="page-item">
-                          <a
-                            className="page-link"
-                            href="#"
-                            onClick={() => currentPage > 1 && getUser(currentPage - 1)}>
-                            Previous
-                          </a>
-                        </li>
-                        {Array.from({ length: NumberOfPage }).map((_, index) => (
-                          <li
-                            key={index}
-                            className="page-item "
-                            onClick={() => getUser(index + 1)}
-                            value={index + 1}>
-                            <a className="page-link" href="#">
-                              {index + 1}
+                    <div className="paginationAdmin ">
+                      <nav aria-label="Page navigation example">
+                        <ul className="pagination mt-2 ms-3">
+                          <li className="page-item">
+                            <a
+                              className="page-link"
+                              href="#"
+                              onClick={() => currentPage > 1 && getUser(currentPage - 1)}>
+                              Previous
                             </a>
                           </li>
-                        ))}
-
-                        <li className="page-item">
-                          <a
-                            className="page-link"
-                            href="#"
-                            onClick={() => currentPage < NumberOfPage && getUser(currentPage + 1)}>
-                            Next
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
+                          {
+                            Array.from({ length: NumberOfPage }).map((_, index) => (
+                              <li
+                                key={index}
+                                className="page-item"
+                                onClick={() => getUser(index + 1)}
+                                value={index + 1}>
+                                <a className="page-link" href="#">
+                                  {index + 1}
+                                </a>
+                              </li>
+                            ))
+                          }
+                          <li className="page-item">
+                            <a
+                              className="page-link"
+                              href="#"
+                              onClick={() => currentPage < NumberOfPage && getUser(currentPage + 1)}>
+                              Next
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </>
+              </>
+              : <h1>{t("VIEW_DATA.NO_DATA")}</h1>
           )
       }
     </div >
