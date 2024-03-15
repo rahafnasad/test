@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import InputWithoutValidation from "../input/InputWithoutValidation";
-import { AiTwotoneInteraction } from "react-icons/ai";
+import { MdEdit } from "react-icons/md";
 import CreateUserAdmin from "../CreateUserAdmin/CreateUserAdmin";
 import { UserContext } from "../../../context/userContext";
 import axios from "axios";
@@ -8,6 +8,8 @@ import "../input/input.css";
 import "./active.css";
 import { useTranslation } from "react-i18next";
 import { Spinner } from "../../index";
+import { FaCheck } from "react-icons/fa";
+import { IoIosCloseCircle } from "react-icons/io";
 
 export default function ViewData({ data, path, state }) {
   const [users, setUsers] = useState([]);
@@ -146,7 +148,7 @@ export default function ViewData({ data, path, state }) {
                         <p>{t("VIEW_DATA.COUNTRY")}</p>
                       </th>
                       <th>
-                        <p>action</p>
+                        <p>{t("VIEW_DATA.ACTIONS")}</p>
                       </th>
                     </tr>
                   </thead>
@@ -169,8 +171,19 @@ export default function ViewData({ data, path, state }) {
                           <td>
                             <p className="me-2">{user.City.Country.name_ar}</p>
                           </td>
-                          <td>
-                            <AiTwotoneInteraction className="Action" />
+                          <td className="table-action-cell">
+                            <button className="table-action-btn edit">
+                              {t("VIEW_DATA.EDIT")}
+                              <MdEdit className="table-action-icon" />
+                            </button>
+                            <button className="table-action-btn activate">
+                              {t("VIEW_DATA.ACTIVATE")}
+                              <FaCheck className="table-action-icon" />
+                            </button>
+                            <button className="table-action-btn suspense">
+                              {t("VIEW_DATA.SUSPENSE")}
+                              <IoIosCloseCircle className="table-action-icon" />
+                            </button>
                           </td>
                         </tr>
                       ))

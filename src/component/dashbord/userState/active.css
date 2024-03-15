@@ -96,9 +96,53 @@
   /* min-height: 100vh; */
 }
 
-.Action {
+.table-action-icon {
   width: 20px;
   height: 30px;
+  cursor: pointer;
+}
+
+.table-action-btn {
+  background-color: unset;
+  border: none;
+  box-sizing: border-box;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.table-action-cell {
+  display: flex;
+  gap: 20px;
+}
+
+.activate {
+  background-color: #28a745;
+}
+
+.activate:hover {
+  background-color: #218838;
+}
+
+.edit {
+  background-color: #ffc107;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.edit:hover {
+  background-color: #e0a800;
+}
+
+.suspense {
+  background-color: #dc3545
+}
+
+.suspense:hover {
+  background-color: #c82333;
 }
 
 .spinner-container {
