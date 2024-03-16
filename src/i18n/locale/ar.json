@@ -29,6 +29,19 @@
     "SEND": "إرسال",
     "MESSAGE_CLOSED_SUCCESSFULLY": "تم غلق الرسالة بنجاح"
   },
+  "CREATE_USER_ADMIN": {
+    "ADD_TITLE": "إنشاء مستخدم جديد",
+    "EDIT_TITLE": "تعديل بيانات المستخدم"
+  },
+  "CREATE_PAGE_1": {
+    "USERNAME": "اسم المستخدم",
+    "PASSWORD": "كلمة المرور",
+    "MEMBER_NAME": "اسم العضو",
+    "MEMBER_INFO": "بيانات العضو",
+    "ENTER_MEMBER_DATA": "أدخل البيانات المرغوبة الخاصة بالعضو المسؤول عن الجامعة",
+    "PREVIOUS": "السابق",
+    "NEXT": "التالي"
+  },
   "CREATE_PAGE_2": {
     "UNIVERSITY_NAME": "اسم الجامعة",
     "MEMBER_NAME": "اسم العضو",

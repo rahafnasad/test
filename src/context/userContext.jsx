@@ -8,6 +8,7 @@ export default function UserContextProvider({ children }) {
   const [userInpage1, setUserInPagre1] = useState([]);
   const [ShowAdd, setShowAdd] = useState(false);
   const [state, setState] = useState("البريد الوارد");
+  const [editedUniversity, setEditedUniversity] = useState(null)
   const myStartArray = [-1];
 
   return (
@@ -22,9 +23,11 @@ export default function UserContextProvider({ children }) {
         state,
         setState,
         myStartArray,
+        editedUniversity,
+        setEditedUniversity
       }}
     >
-      {children}
-    </UserContext.Provider>
+  { children }
+    </UserContext.Provider >
   );
 }

@@ -4,28 +4,36 @@ import CreatePage1 from './CreatePage1'
 import CreatePage2 from './CreatePage2';
 import { IoCloseOutline } from "react-icons/io5";
 import { UserContext } from '../../../context/userContext';
+import { useTranslation } from 'react-i18next';
 
 export default function CreateUserAdmin() {
-  const { isPage1Active } = useContext(UserContext);
-  const { setIsPAge1Active } = useContext(UserContext);
-  const { setShowAdd } = useContext(UserContext);
+  const { t } = useTranslation();
+  const {
+    isPage1Active,
+    setIsPAge1Active,
+    setShowAdd,
+    editedUniversity,
+    setEditedUniversity
+  } = useContext(UserContext);
 
   return (
     <div className="createUser ">
       <div className="contentInUser ">
         <div className="d-flex justify-content-between">
           <p className='ParghrCreate py-2 me-3 '>
-            إنشاء مستخدم جديد
+            {
+              editedUniversity
+                ? t("CREATE_USER_ADMIN.EDIT_TITLE")
+                : t("CREATE_USER_ADMIN.ADD_TITLE")
+            }
           </p>
-          <IoCloseOutline className='canceled' onClick={() => { setShowAdd(false) }} />
+          <IoCloseOutline className='canceled' onClick={() => { setShowAdd(false); setEditedUniversity(null); setIsPAge1Active(true) }} />
         </div>
 
         <div className="row form-content bg-white mx-2 ">
           <div className="col-lg-3 mt-5">
             <div className="d-flex userInfo">
-              <Link onClick={() => {
-                setIsPAge1Active(true);
-              }}>
+              <Link onClick={() => setIsPAge1Active(true)}>
                 <div className="d-flex ">
                   <span className={`one ms-2 ${isPage1Active ? "bg-mainColor text-white" : "bg-light text-mainColor"}`}><b>1</b></span>
                   <div>

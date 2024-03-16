@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   z-index: 1001;
-  width: 55%;
+  width: 1000px;
   margin: auto;
   margin-top: 60px;
 }
@@ -62,7 +62,7 @@
 }
 
 .createUser .ParghrCreate {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 22px;
   color: rgb(94, 88, 115);
   font-weight: 500;
@@ -130,6 +130,7 @@
 
 .canceled:hover {
   padding-top: 5px;
+  cursor: pointer;
 }
 
 .contentInUser {

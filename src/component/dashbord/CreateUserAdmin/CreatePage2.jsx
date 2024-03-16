@@ -8,13 +8,11 @@ import '../input/input.css';
 import './createuser.css';
 
 export default function CreatePage2() {
-  const { setIsPAge1Active } = useContext(UserContext);
+  const { setIsPAge1Active, editedUniversity } = useContext(UserContext);
   const { t } = useTranslation();
   const [error, setError] = useState(false);
-  const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
-
   const initialValues = {
     uni_name_ar: '',
     uni_name_eng: '',
@@ -24,6 +22,7 @@ export default function CreatePage2() {
     uni_address: '',
     uni_url: '',
   };
+  const [values, setValues] = useState(editedUniversity ? editedUniversity : initialValues);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,53 +42,53 @@ export default function CreatePage2() {
 
   const inputs = [
     {
-      id: 'uni_name_ar',
+      id: 'name_ar',
       type: 'text',
-      name: 'uni_name_ar',
+      name: 'name_ar',
       title: t("CREATE_PAGE_2.UNIVERSITY_NAME"),
-      value: values.uni_name_ar,
+      value: values.name_ar,
     },
     {
-      id: 'uni_name_eng',
+      id: 'name_eng',
       type: 'text',
-      name: 'uni_name_eng',
+      name: 'name_eng',
       title: t("CREATE_PAGE_2.MEMBER_NAME"),
-      value: values.uni_name_eng,
+      value: values.name_eng,
     },
     {
-      id: 'uni_email',
+      id: 'email',
       type: 'email',
-      name: 'uni_email',
+      name: 'email',
       title: t("CREATE_PAGE_2.UNIVERSITY_EMAIL"),
-      value: values.uni_email,
+      value: values.email,
     },
     {
-      id: 'uni_phone',
+      id: 'phone',
       type: 'text',
-      name: 'uni_phone',
+      name: 'phone',
       title: t("CREATE_PAGE_2.PHONE"),
-      value: values.uni_phone,
+      value: values.phone,
     },
     {
-      id: 'uni_fax',
+      id: 'fax',
       type: 'text',
-      name: 'uni_fax',
+      name: 'fax',
       title: t("CREATE_PAGE_2.FAX"),
-      value: values.uni_fax,
+      value: values.fax,
     },
     {
-      id: 'uni_address',
+      id: 'address',
       type: 'text',
-      name: 'uni_address',
+      name: 'address',
       title: t("CREATE_PAGE_2.ADDRESS"),
-      value: values.uni_address,
+      value: values.address,
     },
     {
-      id: 'uni_url',
+      id: 'url',
       type: 'text',
-      name: 'uni_url',
+      name: 'url',
       title: 'URL',
-      value: values.uni_url,
+      value: values.url,
     },
   ];
 

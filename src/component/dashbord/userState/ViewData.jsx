@@ -18,7 +18,7 @@ export default function ViewData({ data, path, state }) {
   const [NumberOfPage, setNumberOfPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const { ShowAdd } = useContext(UserContext);
-  const { setShowAdd } = useContext(UserContext);
+  const { setShowAdd, setEditedUniversity } = useContext(UserContext);
   const { t } = useTranslation();
 
   const getUser = async (page) => {
@@ -172,14 +172,19 @@ export default function ViewData({ data, path, state }) {
                             <p className="me-2">{user.City.Country.name_ar}</p>
                           </td>
                           <td className="table-action-cell">
-                            <button className="table-action-btn edit">
+                            <button onClick={() => {
+                              setEditedUniversity(user);
+                              setShowAdd(true)
+                            }} className="table-action-btn edit">
                               {t("VIEW_DATA.EDIT")}
                               <MdEdit className="table-action-icon" />
                             </button>
+
                             <button className="table-action-btn activate">
                               {t("VIEW_DATA.ACTIVATE")}
                               <FaCheck className="table-action-icon" />
                             </button>
+
                             <button className="table-action-btn suspense">
                               {t("VIEW_DATA.SUSPENSE")}
                               <IoIosCloseCircle className="table-action-icon" />
